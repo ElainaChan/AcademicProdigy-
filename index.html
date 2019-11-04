@@ -142,12 +142,24 @@
 </li>
 <li>当前文件夹下找到”_config.yml”文件，进行个性化配置，设置标题及作者如下所示：<ul>
 <li>title: BlogTest</li>
-<li>author: ElainaChan</li>
+<li>author: ElainaChan<ul>
+<li>更新博客到github上</li>
 </ul>
 </li>
-<li>网站雏形，分别输入命令<blockquote>
-<p>hexo new test_my_site   &nbsp;&nbsp;&nbsp;  #创建一篇新文章<br>hexo g   &nbsp;&nbsp;&nbsp;                 #生成文件<br>hexo s   &nbsp;&nbsp; &nbsp;            #本地 server 部署</p>
-</blockquote>
+<li>进入根目录文件夹，找到”_config.yml”文件，文件最后修改为：<blockquote>
+<p>deploy:</p>
+<pre><code>type: git
+repo: 这里填入你之前在GitHub上创建仓库的完整路径
+branch: master</code></pre></blockquote>
+</li>
+</ul>
+</li>
+<li>网站雏形，分别输入命令<ul>
+<li>hexo new test_my_site   &nbsp;&nbsp;&nbsp;  #创建一篇新文章</li>
+<li>hexo g   &nbsp;&nbsp;&nbsp;                 #生成文件</li>
+<li>hexo d   &nbsp;&nbsp;&nbsp;                 #更新部署到github上</li>
+<li>hexo s   &nbsp;&nbsp; &nbsp;            #本地 server 部署</li>
+</ul>
 </li>
 <li>浏览器输入地址：  localhost:4000   ，访问博客内容</li>
 </ul>
@@ -167,7 +179,7 @@
 <li>安装 Maven：<a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">http://maven.apache.org/download.cgi</a> 下载”.zip”解压到一个文件夹</li>
 <li>环境变量配置<ul>
 <li>新建环境变量”MAVEN_HOME”，赋值maven解压文件夹路径</li>
-<li>编辑环境变量Path，增加”%MAVEN_HOME%\bin;“</li>
+<li>编辑环境变量Path，增加 “%MAVEN_HOME%\bin;“</li>
 <li>命令行检查是否安装成功，命令”mvn -v”</li>
 </ul>
 </li>
@@ -219,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/01/HomePage-test/" data-id="ck2kascen0000a8um46vp2vr0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/01/HomePage-test/" data-id="ck2kd92h10000tcumhbg84272" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" rel="tag">安装教程</a></li></ul>
@@ -257,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src/tsconfig/" data-id="ck2kascgr0010a8um1qiv0d36" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src/tsconfig/" data-id="ck2kd92jv0010tcum2hdz7wig" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src/tslint/" data-id="ck2kascgs0011a8uma46n5c1y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src/tslint/" data-id="ck2kd92jw0011tcum4vwc513a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src-client/template/" data-id="ck2kascgs0012a8um3merdkhb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src-client/template/" data-id="ck2kd92jw0012tcuma19m40tt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -384,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src-client/tsconfig/" data-id="ck2kascgt0013a8umf98faotk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src-client/tsconfig/" data-id="ck2kd92jx0013tcum4mo18yrl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -420,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src-client/tslint/" data-id="ck2kascgu0014a8um1nww4og4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/src-client/tslint/" data-id="ck2kd92jy0014tcumc58x6j4g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -456,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/spec/tsconfig/" data-id="ck2kascgq000ya8um3qhx76nj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/spec/tsconfig/" data-id="ck2kd92ju000ytcumad2g9ss6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -492,7 +504,142 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/spec/tslint/" data-id="ck2kascgq000za8um1bxu02mb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/spec/tslint/" data-id="ck2kd92ju000ztcumeb0i64rn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-markdown-preview-plus/spec/markdown-it-math/options.spec" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/31/markdown-preview-plus/spec/markdown-it-math/options.spec/" class="article-date">
+  <time datetime="2019-10-31T09:19:10.860Z" itemprop="datePublished">2019-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/31/markdown-preview-plus/spec/markdown-it-math/options.spec/">markdown-preview-plus/spec/markdown-it-math/options.spec</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        'use babel'
+
+var assert = require('assert')
+var { math_plugin } = require('../../lib/markdown-it-math/index.js')
+
+describe('Options', function() {
+  it('Should allow single-double `$` as delimiters', function() {
+    var md = require('markdown-it')().use(math_plugin, {
+      inlineDelim: [['$', '$']],
+      blockDelim: [['$$', '$$']],
+    })
+
+    var res1 = md.render('$1+1 = 2$')
+    var res2 = md.render('$$\n1+1 = 2\n$$')
+    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
+    assert.equal(res2, '<div class="math block">1+1 = 2\n</div>\n')
+  })
+  it('Should allow LaTeX style delimiters', function() {
+    var md = require('markdown-it')().use(math_plugin, {
+      inlineDelim: [['\\(', '\\)']],
+      blockDelim: [['\\[', '\\]']],
+    })
+
+    var res1 = md.render('\\(1+1 = 2\\)'),
+      res2 = md.render('\\[\n1+1 = 2\n\\]')
+    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
+    assert.equal(res2, '<div class="math block">1+1 = 2\n</div>\n')
+  })
+  it('Should allow newline in opening block delimiters', function() {
+    var md = require('markdown-it')().use(math_plugin, {
+      inlineDelim: [['$$', '$$']],
+      blockDelim: [['$$\n', '$$']],
+    })
+
+    var res1 = md.render('$$1+1 = 2$$'),
+      res2 = md.render('$$\n1+1 = 2$$')
+    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
+    assert.equal(res2, '<div class="math block">1+1 = 2</div>\n')
+  })
+  it('Should allow newline in closing block delimiters', function() {
+    var md = require('markdown-it')().use(math_plugin, {
+      inlineDelim: [['$$', '$$']],
+      blockDelim: [['$$\n', '\n$$']],
+    })
+
+    var res1 = md.render('$$1+1 = 2$$'),
+      res2 = md.render('$$\n1+1 = 2$$'),
+      res3 = md.render('$$\n1+1 = 2\n$$')
+    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
+    assert.equal(res2, '<div class="math block">1+1 = 2$$</div>\n')
+    assert.equal(res3, '<div class="math block">1+1 = 2\n</div>\n')
+  })
+  it('Should only support singular newlines in block math closing tags', function() {
+    var md = require('markdown-it')().use(math_plugin, {
+      inlineDelim: [['$$', '$$']],
+      blockDelim: [['$$\n', '\n\n$$']],
+    })
+
+    var res1 = md.render('$$1+1 = 2$$'),
+      res2 = md.render('$$\n1+1 = 2$$'),
+      res3 = md.render('$$\n1+1 = 2\n\n$$')
+    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
+    assert.equal(res2, '<div class="math block">1+1 = 2$$</div>\n')
+    assert.equal(res3, '<div class="math block">1+1 = 2\n\n$$</div>\n')
+  })
+})
+
+describe('Rendering options', function() {
+  it('Should allow different options', function() {
+    var md = require('markdown-it')().use(math_plugin, {
+      renderingOptions: { decimalMark: ',' },
+    })
+
+    var res1 = md.render('$$40,2$$')
+    assert.equal(res1, '<p><span class="math inline">40,2</span></p>\n')
+
+    var res2 = md.render('$$$\n40,2\n$$$')
+    assert.equal(res2, '<div class="math block">40,2\n</div>\n')
+  })
+})
+
+describe('Renderer', function() {
+  it('Should allow another renderer', function() {
+    var md = require('markdown-it')().use(math_plugin, {
+      inlineRenderer: function(str) {
+        return `<inline>${str}</inline>`
+      },
+      blockRenderer: function(str) {
+        return `<display>${str}</display>`
+      },
+    })
+
+    var res1 = md.render('$$1+1 = 2$$')
+    assert.equal(res1, '<p><inline>1+1 = 2</inline></p>\n')
+
+    var res2 = md.render('$$$\n\\sin(2\\pi)\n$$$')
+    assert.equal(res2, '<display>\\sin(2\\pi)\n</display>\n')
+  })
+})
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/spec/markdown-it-math/options.spec/" data-id="ck2kd92kf001htcum3owkf4vm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -671,142 +818,7 @@ describe('Parsing pipe inside unopened maths delimiter', function() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/spec/markdown-it-math/tables.spec/" data-id="ck2kasch8001ja8um87ngbxh3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-markdown-preview-plus/spec/markdown-it-math/options.spec" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/31/markdown-preview-plus/spec/markdown-it-math/options.spec/" class="article-date">
-  <time datetime="2019-10-31T09:19:10.860Z" itemprop="datePublished">2019-10-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/31/markdown-preview-plus/spec/markdown-it-math/options.spec/">markdown-preview-plus/spec/markdown-it-math/options.spec</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        'use babel'
-
-var assert = require('assert')
-var { math_plugin } = require('../../lib/markdown-it-math/index.js')
-
-describe('Options', function() {
-  it('Should allow single-double `$` as delimiters', function() {
-    var md = require('markdown-it')().use(math_plugin, {
-      inlineDelim: [['$', '$']],
-      blockDelim: [['$$', '$$']],
-    })
-
-    var res1 = md.render('$1+1 = 2$')
-    var res2 = md.render('$$\n1+1 = 2\n$$')
-    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
-    assert.equal(res2, '<div class="math block">1+1 = 2\n</div>\n')
-  })
-  it('Should allow LaTeX style delimiters', function() {
-    var md = require('markdown-it')().use(math_plugin, {
-      inlineDelim: [['\\(', '\\)']],
-      blockDelim: [['\\[', '\\]']],
-    })
-
-    var res1 = md.render('\\(1+1 = 2\\)'),
-      res2 = md.render('\\[\n1+1 = 2\n\\]')
-    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
-    assert.equal(res2, '<div class="math block">1+1 = 2\n</div>\n')
-  })
-  it('Should allow newline in opening block delimiters', function() {
-    var md = require('markdown-it')().use(math_plugin, {
-      inlineDelim: [['$$', '$$']],
-      blockDelim: [['$$\n', '$$']],
-    })
-
-    var res1 = md.render('$$1+1 = 2$$'),
-      res2 = md.render('$$\n1+1 = 2$$')
-    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
-    assert.equal(res2, '<div class="math block">1+1 = 2</div>\n')
-  })
-  it('Should allow newline in closing block delimiters', function() {
-    var md = require('markdown-it')().use(math_plugin, {
-      inlineDelim: [['$$', '$$']],
-      blockDelim: [['$$\n', '\n$$']],
-    })
-
-    var res1 = md.render('$$1+1 = 2$$'),
-      res2 = md.render('$$\n1+1 = 2$$'),
-      res3 = md.render('$$\n1+1 = 2\n$$')
-    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
-    assert.equal(res2, '<div class="math block">1+1 = 2$$</div>\n')
-    assert.equal(res3, '<div class="math block">1+1 = 2\n</div>\n')
-  })
-  it('Should only support singular newlines in block math closing tags', function() {
-    var md = require('markdown-it')().use(math_plugin, {
-      inlineDelim: [['$$', '$$']],
-      blockDelim: [['$$\n', '\n\n$$']],
-    })
-
-    var res1 = md.render('$$1+1 = 2$$'),
-      res2 = md.render('$$\n1+1 = 2$$'),
-      res3 = md.render('$$\n1+1 = 2\n\n$$')
-    assert.equal(res1, '<p><span class="math inline">1+1 = 2</span></p>\n')
-    assert.equal(res2, '<div class="math block">1+1 = 2$$</div>\n')
-    assert.equal(res3, '<div class="math block">1+1 = 2\n\n$$</div>\n')
-  })
-})
-
-describe('Rendering options', function() {
-  it('Should allow different options', function() {
-    var md = require('markdown-it')().use(math_plugin, {
-      renderingOptions: { decimalMark: ',' },
-    })
-
-    var res1 = md.render('$$40,2$$')
-    assert.equal(res1, '<p><span class="math inline">40,2</span></p>\n')
-
-    var res2 = md.render('$$$\n40,2\n$$$')
-    assert.equal(res2, '<div class="math block">40,2\n</div>\n')
-  })
-})
-
-describe('Renderer', function() {
-  it('Should allow another renderer', function() {
-    var md = require('markdown-it')().use(math_plugin, {
-      inlineRenderer: function(str) {
-        return `<inline>${str}</inline>`
-      },
-      blockRenderer: function(str) {
-        return `<display>${str}</display>`
-      },
-    })
-
-    var res1 = md.render('$$1+1 = 2$$')
-    assert.equal(res1, '<p><inline>1+1 = 2</inline></p>\n')
-
-    var res2 = md.render('$$$\n\\sin(2\\pi)\n$$$')
-    assert.equal(res2, '<display>\\sin(2\\pi)\n</display>\n')
-  })
-})
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/spec/markdown-it-math/options.spec/" data-id="ck2kasch9001ka8um1qjm2cgr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/spec/markdown-it-math/tables.spec/" data-id="ck2kd92kg001itcum8oa10dq9" class="article-share-link">Share</a>
       
       
     </footer>
