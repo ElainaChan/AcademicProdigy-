@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>markdown-preview-plus/lib/extension-helper | Acdemic-Prodigy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&quot;use strict&quot;; Object.defineProperty(exports, &quot;__esModule&quot;, { value: true }); const scopesByFenceName = {     sh: &amp;apos;source.shell&amp;apos;,     bash: &amp;apos;source.shell&amp;apos;,     c: &amp;apos;source.c&amp;apos;,     &amp;apos;c++&amp;apos;: &amp;apos;source.cpp&amp;apos;,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown-preview-plus&#x2F;lib&#x2F;extension-helper">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;markdown-preview-plus&#x2F;lib&#x2F;extension-helper&#x2F;index.html">
+<meta property="og:site_name" content="Acdemic-Prodigy">
+<meta property="og:description" content="&quot;use strict&quot;; Object.defineProperty(exports, &quot;__esModule&quot;, { value: true }); const scopesByFenceName = {     sh: &amp;apos;source.shell&amp;apos;,     bash: &amp;apos;source.shell&amp;apos;,     c: &amp;apos;source.c&amp;apos;,     &amp;apos;c++&amp;apos;: &amp;apos;source.cpp&amp;apos;,">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-31T09:19:10.835Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Acdemic-Prodigy" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Acdemic-Prodigy</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-markdown-preview-plus/lib/extension-helper" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/31/markdown-preview-plus/lib/extension-helper/" class="article-date">
+  <time datetime="2019-10-31T09:19:10.835Z" itemprop="datePublished">2019-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      markdown-preview-plus/lib/extension-helper
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const scopesByFenceName = {
+    sh: 'source.shell',
+    bash: 'source.shell',
+    c: 'source.c',
+    'c++': 'source.cpp',
+    cpp: 'source.cpp',
+    coffee: 'source.coffee',
+    coffeescript: 'source.coffee',
+    'coffee-script': 'source.coffee',
+    cs: 'source.cs',
+    csharp: 'source.cs',
+    css: 'source.css',
+    scss: 'source.css.scss',
+    sass: 'source.sass',
+    erlang: 'source.erl',
+    go: 'source.go',
+    html: 'text.html.basic',
+    java: 'source.java',
+    js: 'source.js',
+    javascript: 'source.js',
+    json: 'source.json',
+    less: 'source.less',
+    mustache: 'text.html.mustache',
+    objc: 'source.objc',
+    'objective-c': 'source.objc',
+    php: 'text.html.php',
+    py: 'source.python',
+    python: 'source.python',
+    rb: 'source.ruby',
+    ruby: 'source.ruby',
+    text: 'text.plain',
+    toml: 'source.toml',
+    xml: 'text.xml',
+    yaml: 'source.yaml',
+    yml: 'source.yaml',
+};
+function scopeForFenceName(fenceName) {
+    const lcfn = fenceName.toLowerCase();
+    return scopesByFenceName[lcfn] || `source.${lcfn}`;
+}
+exports.scopeForFenceName = scopeForFenceName;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXh0ZW5zaW9uLWhlbHBlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9leHRlbnNpb24taGVscGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsTUFBTSxpQkFBaUIsR0FBRztJQUN4QixFQUFFLEVBQUUsY0FBYztJQUNsQixJQUFJLEVBQUUsY0FBYztJQUNwQixDQUFDLEVBQUUsVUFBVTtJQUNiLEtBQUssRUFBRSxZQUFZO0lBQ25CLEdBQUcsRUFBRSxZQUFZO0lBQ2pCLE1BQU0sRUFBRSxlQUFlO0lBQ3ZCLFlBQVksRUFBRSxlQUFlO0lBQzdCLGVBQWUsRUFBRSxlQUFlO0lBQ2hDLEVBQUUsRUFBRSxXQUFXO0lBQ2YsTUFBTSxFQUFFLFdBQVc7SUFDbkIsR0FBRyxFQUFFLFlBQVk7SUFDakIsSUFBSSxFQUFFLGlCQUFpQjtJQUN2QixJQUFJLEVBQUUsYUFBYTtJQUNuQixNQUFNLEVBQUUsWUFBWTtJQUNwQixFQUFFLEVBQUUsV0FBVztJQUNmLElBQUksRUFBRSxpQkFBaUI7SUFDdkIsSUFBSSxFQUFFLGFBQWE7SUFDbkIsRUFBRSxFQUFFLFdBQVc7SUFDZixVQUFVLEVBQUUsV0FBVztJQUN2QixJQUFJLEVBQUUsYUFBYTtJQUNuQixJQUFJLEVBQUUsYUFBYTtJQUNuQixRQUFRLEVBQUUsb0JBQW9CO0lBQzlCLElBQUksRUFBRSxhQUFhO0lBQ25CLGFBQWEsRUFBRSxhQUFhO0lBQzVCLEdBQUcsRUFBRSxlQUFlO0lBQ3BCLEVBQUUsRUFBRSxlQUFlO0lBQ25CLE1BQU0sRUFBRSxlQUFlO0lBQ3ZCLEVBQUUsRUFBRSxhQUFhO0lBQ2pCLElBQUksRUFBRSxhQUFhO0lBQ25CLElBQUksRUFBRSxZQUFZO0lBQ2xCLElBQUksRUFBRSxhQUFhO0lBQ25CLEdBQUcsRUFBRSxVQUFVO0lBQ2YsSUFBSSxFQUFFLGFBQWE7SUFDbkIsR0FBRyxFQUFFLGFBQWE7Q0FDNEIsQ0FBQTtBQUVoRCxTQUFnQixpQkFBaUIsQ0FBQyxTQUFpQjtJQUNqRCxNQUFNLElBQUksR0FBRyxTQUFTLENBQUMsV0FBVyxFQUFFLENBQUE7SUFDcEMsT0FBTyxpQkFBaUIsQ0FBQyxJQUFJLENBQUMsSUFBSSxVQUFVLElBQUksRUFBRSxDQUFBO0FBQ3BELENBQUM7QUFIRCw4Q0FHQyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IHNjb3Blc0J5RmVuY2VOYW1lID0ge1xuICBzaDogJ3NvdXJjZS5zaGVsbCcsXG4gIGJhc2g6ICdzb3VyY2Uuc2hlbGwnLFxuICBjOiAnc291cmNlLmMnLFxuICAnYysrJzogJ3NvdXJjZS5jcHAnLFxuICBjcHA6ICdzb3VyY2UuY3BwJyxcbiAgY29mZmVlOiAnc291cmNlLmNvZmZlZScsXG4gIGNvZmZlZXNjcmlwdDogJ3NvdXJjZS5jb2ZmZWUnLFxuICAnY29mZmVlLXNjcmlwdCc6ICdzb3VyY2UuY29mZmVlJyxcbiAgY3M6ICdzb3VyY2UuY3MnLFxuICBjc2hhcnA6ICdzb3VyY2UuY3MnLFxuICBjc3M6ICdzb3VyY2UuY3NzJyxcbiAgc2NzczogJ3NvdXJjZS5jc3Muc2NzcycsXG4gIHNhc3M6ICdzb3VyY2Uuc2FzcycsXG4gIGVybGFuZzogJ3NvdXJjZS5lcmwnLFxuICBnbzogJ3NvdXJjZS5nbycsXG4gIGh0bWw6ICd0ZXh0Lmh0bWwuYmFzaWMnLFxuICBqYXZhOiAnc291cmNlLmphdmEnLFxuICBqczogJ3NvdXJjZS5qcycsXG4gIGphdmFzY3JpcHQ6ICdzb3VyY2UuanMnLFxuICBqc29uOiAnc291cmNlLmpzb24nLFxuICBsZXNzOiAnc291cmNlLmxlc3MnLFxuICBtdXN0YWNoZTogJ3RleHQuaHRtbC5tdXN0YWNoZScsXG4gIG9iamM6ICdzb3VyY2Uub2JqYycsXG4gICdvYmplY3RpdmUtYyc6ICdzb3VyY2Uub2JqYycsXG4gIHBocDogJ3RleHQuaHRtbC5waHAnLFxuICBweTogJ3NvdXJjZS5weXRob24nLFxuICBweXRob246ICdzb3VyY2UucHl0aG9uJyxcbiAgcmI6ICdzb3VyY2UucnVieScsXG4gIHJ1Ynk6ICdzb3VyY2UucnVieScsXG4gIHRleHQ6ICd0ZXh0LnBsYWluJyxcbiAgdG9tbDogJ3NvdXJjZS50b21sJyxcbiAgeG1sOiAndGV4dC54bWwnLFxuICB5YW1sOiAnc291cmNlLnlhbWwnLFxuICB5bWw6ICdzb3VyY2UueWFtbCcsXG59IGFzIHsgW2ZlbmNlTmFtZTogc3RyaW5nXTogc3RyaW5nIHwgdW5kZWZpbmVkIH1cblxuZXhwb3J0IGZ1bmN0aW9uIHNjb3BlRm9yRmVuY2VOYW1lKGZlbmNlTmFtZTogc3RyaW5nKTogc3RyaW5nIHtcbiAgY29uc3QgbGNmbiA9IGZlbmNlTmFtZS50b0xvd2VyQ2FzZSgpXG4gIHJldHVybiBzY29wZXNCeUZlbmNlTmFtZVtsY2ZuXSB8fCBgc291cmNlLiR7bGNmbn1gXG59XG4iXX0=
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/extension-helper/" data-id="ck2kaqi5r000ia8umcz6fdll2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/31/markdown-preview-plus/lib/macros-util/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          markdown-preview-plus/lib/macros-util
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/31/markdown-preview-plus/lib/config/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">markdown-preview-plus/lib/config</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">安装教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" rel="tag">安装教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" style="font-size: 10px;">安装教程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/01/HomePage-test/">HomePage_test</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src/tslint/">markdown-preview-plus/src/tslint</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src/tsconfig/">markdown-preview-plus/src/tsconfig</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src-client/template/">markdown-preview-plus/src-client/template</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src-client/tsconfig/">markdown-preview-plus/src-client/tsconfig</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 ElainaChan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

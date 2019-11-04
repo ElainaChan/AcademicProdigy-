@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>markdown-preview-plus/lib/markdown-preview-view/ipc/request-handler | Acdemic-Prodigy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&quot;use strict&quot;; Object.defineProperty(exports, &quot;__esModule&quot;, { value: true }); const electron_1 = require(&quot;electron&quot;); class RequestHandler {     constructor(windowId, editorId, handlers) {         this">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown-preview-plus&#x2F;lib&#x2F;markdown-preview-view&#x2F;ipc&#x2F;request-handler">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;markdown-preview-plus&#x2F;lib&#x2F;markdown-preview-view&#x2F;ipc&#x2F;request-handler&#x2F;index.html">
+<meta property="og:site_name" content="Acdemic-Prodigy">
+<meta property="og:description" content="&quot;use strict&quot;; Object.defineProperty(exports, &quot;__esModule&quot;, { value: true }); const electron_1 = require(&quot;electron&quot;); class RequestHandler {     constructor(windowId, editorId, handlers) {         this">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-31T09:19:10.841Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Acdemic-Prodigy" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Acdemic-Prodigy</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-markdown-preview-plus/lib/markdown-preview-view/ipc/request-handler" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/31/markdown-preview-plus/lib/markdown-preview-view/ipc/request-handler/" class="article-date">
+  <time datetime="2019-10-31T09:19:10.841Z" itemprop="datePublished">2019-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      markdown-preview-plus/lib/markdown-preview-view/ipc/request-handler
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const electron_1 = require("electron");
+class RequestHandler {
+    constructor(windowId, editorId, handlers) {
+        this.windowId = windowId;
+        this.editorId = editorId;
+        this.handlers = handlers;
+        this.handleRequest = (e) => {
+            if (e.editorId !== this.editorId || e.windowId !== this.windowId)
+                return;
+            const func = this.handlers[e.cmd];
+            const reply = func(e.args);
+            electron_1.remote.ipcMain.emit('markdown-preview-plus:editor-reply', {
+                editorId: e.editorId,
+                windowId: e.windowId,
+                forWindowId: e.forWindowId,
+                idx: e.idx,
+                reply,
+            });
+        };
+        electron_1.remote.ipcMain.on('markdown-preview-plus:editor-request', this.handleRequest);
+    }
+    dispose() {
+        electron_1.remote.ipcMain.removeListener('markdown-preview-plus:editor-request', this.handleRequest);
+    }
+}
+exports.RequestHandler = RequestHandler;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVxdWVzdC1oYW5kbGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL21hcmtkb3duLXByZXZpZXctdmlldy9pcGMvcmVxdWVzdC1oYW5kbGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsdUNBQWlDO0FBK0JqQyxNQUFhLGNBQWM7SUFDekIsWUFDbUIsUUFBZ0IsRUFDaEIsUUFBZ0IsRUFDaEIsUUFBZ0I7UUFGaEIsYUFBUSxHQUFSLFFBQVEsQ0FBUTtRQUNoQixhQUFRLEdBQVIsUUFBUSxDQUFRO1FBQ2hCLGFBQVEsR0FBUixRQUFRLENBQVE7UUFlNUIsa0JBQWEsR0FBRyxDQUFDLENBQXlCLEVBQUUsRUFBRTtZQUNuRCxJQUFJLENBQUMsQ0FBQyxRQUFRLEtBQUssSUFBSSxDQUFDLFFBQVEsSUFBSSxDQUFDLENBQUMsUUFBUSxLQUFLLElBQUksQ0FBQyxRQUFRO2dCQUFFLE9BQU07WUFDeEUsTUFBTSxJQUFJLEdBQUcsSUFBSSxDQUFDLFFBQVEsQ0FBQyxDQUFDLENBQUMsR0FBRyxDQUFhLENBQUE7WUFDN0MsTUFBTSxLQUFLLEdBQUcsSUFBSSxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FBQTtZQUMxQixpQkFBTSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsb0NBQW9DLEVBQUU7Z0JBQ3hELFFBQVEsRUFBRSxDQUFDLENBQUMsUUFBUTtnQkFDcEIsUUFBUSxFQUFFLENBQUMsQ0FBQyxRQUFRO2dCQUNwQixXQUFXLEVBQUUsQ0FBQyxDQUFDLFdBQVc7Z0JBQzFCLEdBQUcsRUFBRSxDQUFDLENBQUMsR0FBRztnQkFDVixLQUFLO2FBQ04sQ0FBQyxDQUFBO1FBQ0osQ0FBQyxDQUFBO1FBeEJDLGlCQUFNLENBQUMsT0FBTyxDQUFDLEVBQUUsQ0FDZixzQ0FBc0MsRUFDdEMsSUFBSSxDQUFDLGFBQWEsQ0FDbkIsQ0FBQTtJQUNILENBQUM7SUFFTSxPQUFPO1FBQ1osaUJBQU0sQ0FBQyxPQUFPLENBQUMsY0FBYyxDQUMzQixzQ0FBc0MsRUFDdEMsSUFBSSxDQUFDLGFBQWEsQ0FDbkIsQ0FBQTtJQUNILENBQUM7Q0FjRjtBQS9CRCx3Q0ErQkMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyByZW1vdGUgfSBmcm9tICdlbGVjdHJvbidcblxuZXhwb3J0IGludGVyZmFjZSBJUENDbWQge1xuICBzY3JvbGxUb0J1ZmZlclJhbmdlOiAoYXJnOiBbbnVtYmVyLCBudW1iZXJdKSA9PiB2b2lkXG4gIGRlc3Ryb3k6IChhcmc6IHZvaWQpID0+IHZvaWRcbiAgaW5pdDogKFxuICAgIGFyZzogdm9pZCxcbiAgKSA9PiB7XG4gICAgdGV4dDogc3RyaW5nXG4gICAgdGl0bGU6IHN0cmluZ1xuICAgIGdyYW1tYXI6IHN0cmluZ1xuICAgIHBhdGg6IHN0cmluZyB8IHVuZGVmaW5lZFxuICB9XG4gIG9wZW5Tb3VyY2U6IChhcmc/OiBudW1iZXIpID0+IHZvaWRcbn1cblxuZXhwb3J0IHR5cGUgRXZlbnRGb3IgPSB7XG4gIFtLIGluIGtleW9mIElQQ0NtZF06IHtcbiAgICBlZGl0b3JJZDogbnVtYmVyXG4gICAgd2luZG93SWQ6IG51bWJlclxuICAgIGZvcldpbmRvd0lkOiBudW1iZXJcbiAgICBpZHg6IG51bWJlclxuICAgIGNtZDogS1xuICAgIGFyZ3M6IEFyZzxJUENDbWRbS10+XG4gIH1cbn1cblxuZXhwb3J0IHR5cGUgQXJnPFQgZXh0ZW5kcyAoYXJnOiBhbnkpID0+IGFueT4gPSBUIGV4dGVuZHMgKGFyZzogaW5mZXIgVSkgPT4gYW55XG4gID8gVVxuICA6IG5ldmVyXG5cbmV4cG9ydCBjbGFzcyBSZXF1ZXN0SGFuZGxlciB7XG4gIGNvbnN0cnVjdG9yKFxuICAgIHByaXZhdGUgcmVhZG9ubHkgd2luZG93SWQ6IG51bWJlcixcbiAgICBwcml2YXRlIHJlYWRvbmx5IGVkaXRvcklkOiBudW1iZXIsXG4gICAgcHJpdmF0ZSByZWFkb25seSBoYW5kbGVyczogSVBDQ21kLFxuICApIHtcbiAgICByZW1vdGUuaXBjTWFpbi5vbihcbiAgICAgICdtYXJrZG93bi1wcmV2aWV3LXBsdXM6ZWRpdG9yLXJlcXVlc3QnLFxuICAgICAgdGhpcy5oYW5kbGVSZXF1ZXN0LFxuICAgIClcbiAgfVxuXG4gIHB1YmxpYyBkaXNwb3NlKCkge1xuICAgIHJlbW90ZS5pcGNNYWluLnJlbW92ZUxpc3RlbmVyKFxuICAgICAgJ21hcmtkb3duLXByZXZpZXctcGx1czplZGl0b3ItcmVxdWVzdCcsXG4gICAgICB0aGlzLmhhbmRsZVJlcXVlc3QsXG4gICAgKVxuICB9XG5cbiAgcHVibGljIGhhbmRsZVJlcXVlc3QgPSAoZTogRXZlbnRGb3Jba2V5b2YgSVBDQ21kXSkgPT4ge1xuICAgIGlmIChlLmVkaXRvcklkICE9PSB0aGlzLmVkaXRvcklkIHx8IGUud2luZG93SWQgIT09IHRoaXMud2luZG93SWQpIHJldHVyblxuICAgIGNvbnN0IGZ1bmMgPSB0aGlzLmhhbmRsZXJzW2UuY21kXSBhcyBGdW5jdGlvblxuICAgIGNvbnN0IHJlcGx5ID0gZnVuYyhlLmFyZ3MpXG4gICAgcmVtb3RlLmlwY01haW4uZW1pdCgnbWFya2Rvd24tcHJldmlldy1wbHVzOmVkaXRvci1yZXBseScsIHtcbiAgICAgIGVkaXRvcklkOiBlLmVkaXRvcklkLFxuICAgICAgd2luZG93SWQ6IGUud2luZG93SWQsXG4gICAgICBmb3JXaW5kb3dJZDogZS5mb3JXaW5kb3dJZCxcbiAgICAgIGlkeDogZS5pZHgsXG4gICAgICByZXBseSxcbiAgICB9KVxuICB9XG59XG4iXX0=
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/markdown-preview-view/ipc/request-handler/" data-id="ck2kaqi6m001ka8umg4cd6e3q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/31/markdown-preview-plus/lib/markdown-preview-view/ipc/should-scroll-sync/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          markdown-preview-plus/lib/markdown-preview-view/ipc/should-scroll-sync
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/31/markdown-preview-plus/lib/markdown-preview-view/ipc/ipc-caller/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">markdown-preview-plus/lib/markdown-preview-view/ipc/ipc-caller</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">安装教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" rel="tag">安装教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" style="font-size: 10px;">安装教程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/01/HomePage-test/">HomePage_test</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src/tslint/">markdown-preview-plus/src/tslint</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src/tsconfig/">markdown-preview-plus/src/tsconfig</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src-client/template/">markdown-preview-plus/src-client/template</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src-client/tsconfig/">markdown-preview-plus/src-client/tsconfig</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 ElainaChan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

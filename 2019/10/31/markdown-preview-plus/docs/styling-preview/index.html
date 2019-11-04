@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>markdown-preview-plus/docs/styling-preview | Acdemic-Prodigy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Styling the previewA short guide on changing the preview look via CSS. Preview style isolationStyles not in atom-text-editor context and not in user stylesheetare not passed through to preview by defa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown-preview-plus&#x2F;docs&#x2F;styling-preview">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;markdown-preview-plus&#x2F;docs&#x2F;styling-preview&#x2F;index.html">
+<meta property="og:site_name" content="Acdemic-Prodigy">
+<meta property="og:description" content="Styling the previewA short guide on changing the preview look via CSS. Preview style isolationStyles not in atom-text-editor context and not in user stylesheetare not passed through to preview by defa">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-31T09:19:10.831Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Acdemic-Prodigy" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Acdemic-Prodigy</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-markdown-preview-plus/docs/styling-preview" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/31/markdown-preview-plus/docs/styling-preview/" class="article-date">
+  <time datetime="2019-10-31T09:19:10.831Z" itemprop="datePublished">2019-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      markdown-preview-plus/docs/styling-preview
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Styling-the-preview"><a href="#Styling-the-preview" class="headerlink" title="Styling the preview"></a>Styling the preview</h1><p>A short guide on changing the preview look via CSS.</p>
+<h2 id="Preview-style-isolation"><a href="#Preview-style-isolation" class="headerlink" title="Preview style isolation"></a>Preview style isolation</h2><p>Styles not in <code>atom-text-editor</code> context and not in user stylesheet<br>are not passed through to preview by default. This might lead to<br>unexpected interactions (or, more likely, lack thereof) with other<br>packages. It’s possible to explicitly whitelist a package in<br>settings. Examples of packages that might affect preview style<br>include: <code>fonts</code> package, <code>language-babel</code> package,<br><code>atom-typescript</code> package, etc. The <code>fonts</code> package is whitelisted<br>by default. A special value of <code>*</code> will pass all<br>Atom workspace styles through to the preview and apply some tweaks<br>to keep it presentable – use this at your own risk, however, it’s<br>impossible to offer any guarantees. Note that HTML export is never<br>affected by third-party packages.</p>
+<h2 id="Writing-your-own-LESS-CSS"><a href="#Writing-your-own-LESS-CSS" class="headerlink" title="Writing your own LESS/CSS"></a>Writing your own LESS/CSS</h2><p>User stylesheet (Edit -&gt; Stylesheet… menu option) is <em>always</em> applied to the<br>preview, so any styles in your stylesheet will affect how the preview renders.</p>
+<p>User stylesheet also affects Atom workspace though, so it can be beneficial to<br>target the preview specifically. To facilitate that, the root <code>html</code> element of<br>the preview has a special attribute <code>data-markdown-preview-plus-context</code>, which<br>can take different values depending on what happens to preview at the moment:</p>
+<ul>
+<li>For actual preview, <code>data-markdown-preview-plus-context</code> has value <code>live-preview</code></li>
+<li>For exported HTML, <code>data-markdown-preview-plus-context</code> has value <code>html-export</code></li>
+<li>For exported PDF, <code>data-markdown-preview-plus-context</code> has value <code>pdf-export</code></li>
+<li>For copied HTML, <code>data-markdown-preview-plus-context</code> has value <code>copy-html</code></li>
+</ul>
+<p>So, to target Markdown-Preview-Plus rendering in general, you can do something like this in your stylesheet:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span><span class="selector-attr">[data-markdown-preview-plus-context]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="comment">/* styles that affect mpp preview */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>If you only want to change something for exported PDF, for instance, you can add<br>something like this:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span><span class="selector-attr">[data-markdown-preview-plus-context="pdf-export"]</span> <span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="comment">/* styles that affect exported PDF only */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>With <code>copy-html</code>, the styles are <em>not</em> copied to the result, so it could be<br>considered less useful than others. But it can be useful for affecting MathJax<br>rendering of math in copied HTML. For instance, to force display math width,<br>you could do something like this:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span><span class="selector-attr">[data-markdown-preview-plus-context="copy-html"]</span> &#123;</span><br><span class="line">  <span class="selector-tag">span</span><span class="selector-class">.display-math</span> &#123; <span class="comment">/* force display math container width to 10cm */</span></span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">10cm</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/docs/styling-preview/" data-id="ck2kaqi5s000ja8umdgd5aty0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/31/markdown-preview-plus/docs/options/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          markdown-preview-plus/docs/options
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/31/markdown-preview-plus/docs/features/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">markdown-preview-plus/docs/features</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">安装教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" rel="tag">安装教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" style="font-size: 10px;">安装教程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/01/HomePage-test/">HomePage_test</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src/tslint/">markdown-preview-plus/src/tslint</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src/tsconfig/">markdown-preview-plus/src/tsconfig</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src-client/template/">markdown-preview-plus/src-client/template</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src-client/tsconfig/">markdown-preview-plus/src-client/tsconfig</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 ElainaChan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
