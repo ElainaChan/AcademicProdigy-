@@ -87,7 +87,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/package/" data-id="ck2kd92ix000ctcum45lrhka4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/package/" data-id="ck2kdakpu000bgsumeib2020u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -123,7 +123,81 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/package-lock/" data-id="ck2kd92kz0027tcumfk9c1w2e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/package-lock/" data-id="ck2kdaks90027gsum8oln26o1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-markdown-preview-plus/lib/select-list-view" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/31/markdown-preview-plus/lib/select-list-view/" class="article-date">
+  <time datetime="2019-10-31T09:19:10.847Z" itemprop="datePublished">2019-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/31/markdown-preview-plus/lib/select-list-view/">markdown-preview-plus/lib/select-list-view</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const SelectListView = require("atom-select-list");
+async function selectListView(items) {
+    let panel;
+    const currentFocus = document.activeElement;
+    try {
+        return await new Promise((resolve) => {
+            const select = new SelectListView({
+                items,
+                elementForItem: (item) => {
+                    const li = document.createElement('li');
+                    li.innerText = item;
+                    return li;
+                },
+                didCancelSelection: () => {
+                    resolve();
+                },
+                didConfirmSelection: (item) => {
+                    resolve(item);
+                },
+                itemsClassList: ['atom-typescript'],
+            });
+            panel = atom.workspace.addModalPanel({
+                item: select,
+                visible: true,
+            });
+            select.focus();
+        });
+    }
+    finally {
+        if (panel)
+            panel.destroy();
+        if (currentFocus)
+            currentFocus.focus();
+    }
+}
+exports.selectListView = selectListView;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2VsZWN0LWxpc3Qtdmlldy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9zZWxlY3QtbGlzdC12aWV3LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsbURBQW1EO0FBRzVDLEtBQUssVUFBVSxjQUFjLENBQ2xDLEtBQWU7SUFFZixJQUFJLEtBQWdELENBQUE7SUFDcEQsTUFBTSxZQUFZLEdBQUcsUUFBUSxDQUFDLGFBQW1DLENBQUE7SUFDakUsSUFBSTtRQUNGLE9BQU8sTUFBTSxJQUFJLE9BQU8sQ0FBcUIsQ0FBQyxPQUFPLEVBQUUsRUFBRTtZQUN2RCxNQUFNLE1BQU0sR0FBMkIsSUFBSSxjQUFjLENBQUM7Z0JBQ3hELEtBQUs7Z0JBQ0wsY0FBYyxFQUFFLENBQUMsSUFBWSxFQUFFLEVBQUU7b0JBQy9CLE1BQU0sRUFBRSxHQUFHLFFBQVEsQ0FBQyxhQUFhLENBQUMsSUFBSSxDQUFDLENBQUE7b0JBQ3ZDLEVBQUUsQ0FBQyxTQUFTLEdBQUcsSUFBSSxDQUFBO29CQUNuQixPQUFPLEVBQUUsQ0FBQTtnQkFDWCxDQUFDO2dCQUNELGtCQUFrQixFQUFFLEdBQUcsRUFBRTtvQkFDdkIsT0FBTyxFQUFFLENBQUE7Z0JBQ1gsQ0FBQztnQkFDRCxtQkFBbUIsRUFBRSxDQUFDLElBQVksRUFBRSxFQUFFO29CQUNwQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUE7Z0JBQ2YsQ0FBQztnQkFDRCxjQUFjLEVBQUUsQ0FBQyxpQkFBaUIsQ0FBQzthQUNwQyxDQUFDLENBQUE7WUFDRixLQUFLLEdBQUcsSUFBSSxDQUFDLFNBQVMsQ0FBQyxhQUFhLENBQUM7Z0JBQ25DLElBQUksRUFBRSxNQUFNO2dCQUNaLE9BQU8sRUFBRSxJQUFJO2FBQ2QsQ0FBQyxDQUFBO1lBQ0YsTUFBTSxDQUFDLEtBQUssRUFBRSxDQUFBO1FBQ2hCLENBQUMsQ0FBQyxDQUFBO0tBQ0g7WUFBUztRQUNSLElBQUksS0FBSztZQUFFLEtBQUssQ0FBQyxPQUFPLEVBQUUsQ0FBQTtRQUMxQixJQUFJLFlBQVk7WUFBRSxZQUFZLENBQUMsS0FBSyxFQUFFLENBQUE7S0FDdkM7QUFDSCxDQUFDO0FBaENELHdDQWdDQyIsInNvdXJjZXNDb250ZW50IjpbIi8vIHRzbGludDpkaXNhYmxlOiBuby1mbG9hdGluZy1wcm9taXNlc1xuaW1wb3J0IFNlbGVjdExpc3RWaWV3ID0gcmVxdWlyZSgnYXRvbS1zZWxlY3QtbGlzdCcpXG5pbXBvcnQgeyBQYW5lbCB9IGZyb20gJ2F0b20nXG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBzZWxlY3RMaXN0VmlldyhcbiAgaXRlbXM6IHN0cmluZ1tdLFxuKTogUHJvbWlzZTxzdHJpbmcgfCB1bmRlZmluZWQ+IHtcbiAgbGV0IHBhbmVsOiBQYW5lbDxTZWxlY3RMaXN0VmlldzxzdHJpbmc+PiB8IHVuZGVmaW5lZFxuICBjb25zdCBjdXJyZW50Rm9jdXMgPSBkb2N1bWVudC5hY3RpdmVFbGVtZW50IGFzIEhUTUxFbGVtZW50IHwgdm9pZFxuICB0cnkge1xuICAgIHJldHVybiBhd2FpdCBuZXcgUHJvbWlzZTxzdHJpbmcgfCB1bmRlZmluZWQ+KChyZXNvbHZlKSA9PiB7XG4gICAgICBjb25zdCBzZWxlY3Q6IFNlbGVjdExpc3RWaWV3PHN0cmluZz4gPSBuZXcgU2VsZWN0TGlzdFZpZXcoe1xuICAgICAgICBpdGVtcyxcbiAgICAgICAgZWxlbWVudEZvckl0ZW06IChpdGVtOiBzdHJpbmcpID0+IHtcbiAgICAgICAgICBjb25zdCBsaSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2xpJylcbiAgICAgICAgICBsaS5pbm5lclRleHQgPSBpdGVtXG4gICAgICAgICAgcmV0dXJuIGxpXG4gICAgICAgIH0sXG4gICAgICAgIGRpZENhbmNlbFNlbGVjdGlvbjogKCkgPT4ge1xuICAgICAgICAgIHJlc29sdmUoKVxuICAgICAgICB9LFxuICAgICAgICBkaWRDb25maXJtU2VsZWN0aW9uOiAoaXRlbTogc3RyaW5nKSA9PiB7XG4gICAgICAgICAgcmVzb2x2ZShpdGVtKVxuICAgICAgICB9LFxuICAgICAgICBpdGVtc0NsYXNzTGlzdDogWydhdG9tLXR5cGVzY3JpcHQnXSxcbiAgICAgIH0pXG4gICAgICBwYW5lbCA9IGF0b20ud29ya3NwYWNlLmFkZE1vZGFsUGFuZWwoe1xuICAgICAgICBpdGVtOiBzZWxlY3QsXG4gICAgICAgIHZpc2libGU6IHRydWUsXG4gICAgICB9KVxuICAgICAgc2VsZWN0LmZvY3VzKClcbiAgICB9KVxuICB9IGZpbmFsbHkge1xuICAgIGlmIChwYW5lbCkgcGFuZWwuZGVzdHJveSgpXG4gICAgaWYgKGN1cnJlbnRGb2N1cykgY3VycmVudEZvY3VzLmZvY3VzKClcbiAgfVxufVxuIl19
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/select-list-view/" data-id="ck2kdakqu000sgsum4njt900t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -392,7 +466,7 @@ async function editorTokenized(editor) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/renderer/" data-id="ck2kd92jo000ttcum5cucfjht" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/renderer/" data-id="ck2kdakqw000tgsumcwtp2j9n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -434,81 +508,7 @@ exports.getMedia = getMedia;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/util-common/" data-id="ck2kd92jp000utcum0hvtbe15" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-markdown-preview-plus/lib/select-list-view" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/31/markdown-preview-plus/lib/select-list-view/" class="article-date">
-  <time datetime="2019-10-31T09:19:10.847Z" itemprop="datePublished">2019-10-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/31/markdown-preview-plus/lib/select-list-view/">markdown-preview-plus/lib/select-list-view</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const SelectListView = require("atom-select-list");
-async function selectListView(items) {
-    let panel;
-    const currentFocus = document.activeElement;
-    try {
-        return await new Promise((resolve) => {
-            const select = new SelectListView({
-                items,
-                elementForItem: (item) => {
-                    const li = document.createElement('li');
-                    li.innerText = item;
-                    return li;
-                },
-                didCancelSelection: () => {
-                    resolve();
-                },
-                didConfirmSelection: (item) => {
-                    resolve(item);
-                },
-                itemsClassList: ['atom-typescript'],
-            });
-            panel = atom.workspace.addModalPanel({
-                item: select,
-                visible: true,
-            });
-            select.focus();
-        });
-    }
-    finally {
-        if (panel)
-            panel.destroy();
-        if (currentFocus)
-            currentFocus.focus();
-    }
-}
-exports.selectListView = selectListView;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2VsZWN0LWxpc3Qtdmlldy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9zZWxlY3QtbGlzdC12aWV3LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsbURBQW1EO0FBRzVDLEtBQUssVUFBVSxjQUFjLENBQ2xDLEtBQWU7SUFFZixJQUFJLEtBQWdELENBQUE7SUFDcEQsTUFBTSxZQUFZLEdBQUcsUUFBUSxDQUFDLGFBQW1DLENBQUE7SUFDakUsSUFBSTtRQUNGLE9BQU8sTUFBTSxJQUFJLE9BQU8sQ0FBcUIsQ0FBQyxPQUFPLEVBQUUsRUFBRTtZQUN2RCxNQUFNLE1BQU0sR0FBMkIsSUFBSSxjQUFjLENBQUM7Z0JBQ3hELEtBQUs7Z0JBQ0wsY0FBYyxFQUFFLENBQUMsSUFBWSxFQUFFLEVBQUU7b0JBQy9CLE1BQU0sRUFBRSxHQUFHLFFBQVEsQ0FBQyxhQUFhLENBQUMsSUFBSSxDQUFDLENBQUE7b0JBQ3ZDLEVBQUUsQ0FBQyxTQUFTLEdBQUcsSUFBSSxDQUFBO29CQUNuQixPQUFPLEVBQUUsQ0FBQTtnQkFDWCxDQUFDO2dCQUNELGtCQUFrQixFQUFFLEdBQUcsRUFBRTtvQkFDdkIsT0FBTyxFQUFFLENBQUE7Z0JBQ1gsQ0FBQztnQkFDRCxtQkFBbUIsRUFBRSxDQUFDLElBQVksRUFBRSxFQUFFO29CQUNwQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUE7Z0JBQ2YsQ0FBQztnQkFDRCxjQUFjLEVBQUUsQ0FBQyxpQkFBaUIsQ0FBQzthQUNwQyxDQUFDLENBQUE7WUFDRixLQUFLLEdBQUcsSUFBSSxDQUFDLFNBQVMsQ0FBQyxhQUFhLENBQUM7Z0JBQ25DLElBQUksRUFBRSxNQUFNO2dCQUNaLE9BQU8sRUFBRSxJQUFJO2FBQ2QsQ0FBQyxDQUFBO1lBQ0YsTUFBTSxDQUFDLEtBQUssRUFBRSxDQUFBO1FBQ2hCLENBQUMsQ0FBQyxDQUFBO0tBQ0g7WUFBUztRQUNSLElBQUksS0FBSztZQUFFLEtBQUssQ0FBQyxPQUFPLEVBQUUsQ0FBQTtRQUMxQixJQUFJLFlBQVk7WUFBRSxZQUFZLENBQUMsS0FBSyxFQUFFLENBQUE7S0FDdkM7QUFDSCxDQUFDO0FBaENELHdDQWdDQyIsInNvdXJjZXNDb250ZW50IjpbIi8vIHRzbGludDpkaXNhYmxlOiBuby1mbG9hdGluZy1wcm9taXNlc1xuaW1wb3J0IFNlbGVjdExpc3RWaWV3ID0gcmVxdWlyZSgnYXRvbS1zZWxlY3QtbGlzdCcpXG5pbXBvcnQgeyBQYW5lbCB9IGZyb20gJ2F0b20nXG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBzZWxlY3RMaXN0VmlldyhcbiAgaXRlbXM6IHN0cmluZ1tdLFxuKTogUHJvbWlzZTxzdHJpbmcgfCB1bmRlZmluZWQ+IHtcbiAgbGV0IHBhbmVsOiBQYW5lbDxTZWxlY3RMaXN0VmlldzxzdHJpbmc+PiB8IHVuZGVmaW5lZFxuICBjb25zdCBjdXJyZW50Rm9jdXMgPSBkb2N1bWVudC5hY3RpdmVFbGVtZW50IGFzIEhUTUxFbGVtZW50IHwgdm9pZFxuICB0cnkge1xuICAgIHJldHVybiBhd2FpdCBuZXcgUHJvbWlzZTxzdHJpbmcgfCB1bmRlZmluZWQ+KChyZXNvbHZlKSA9PiB7XG4gICAgICBjb25zdCBzZWxlY3Q6IFNlbGVjdExpc3RWaWV3PHN0cmluZz4gPSBuZXcgU2VsZWN0TGlzdFZpZXcoe1xuICAgICAgICBpdGVtcyxcbiAgICAgICAgZWxlbWVudEZvckl0ZW06IChpdGVtOiBzdHJpbmcpID0+IHtcbiAgICAgICAgICBjb25zdCBsaSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2xpJylcbiAgICAgICAgICBsaS5pbm5lclRleHQgPSBpdGVtXG4gICAgICAgICAgcmV0dXJuIGxpXG4gICAgICAgIH0sXG4gICAgICAgIGRpZENhbmNlbFNlbGVjdGlvbjogKCkgPT4ge1xuICAgICAgICAgIHJlc29sdmUoKVxuICAgICAgICB9LFxuICAgICAgICBkaWRDb25maXJtU2VsZWN0aW9uOiAoaXRlbTogc3RyaW5nKSA9PiB7XG4gICAgICAgICAgcmVzb2x2ZShpdGVtKVxuICAgICAgICB9LFxuICAgICAgICBpdGVtc0NsYXNzTGlzdDogWydhdG9tLXR5cGVzY3JpcHQnXSxcbiAgICAgIH0pXG4gICAgICBwYW5lbCA9IGF0b20ud29ya3NwYWNlLmFkZE1vZGFsUGFuZWwoe1xuICAgICAgICBpdGVtOiBzZWxlY3QsXG4gICAgICAgIHZpc2libGU6IHRydWUsXG4gICAgICB9KVxuICAgICAgc2VsZWN0LmZvY3VzKClcbiAgICB9KVxuICB9IGZpbmFsbHkge1xuICAgIGlmIChwYW5lbCkgcGFuZWwuZGVzdHJveSgpXG4gICAgaWYgKGN1cnJlbnRGb2N1cykgY3VycmVudEZvY3VzLmZvY3VzKClcbiAgfVxufVxuIl19
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/select-list-view/" data-id="ck2kd92jq000vtcumacil0l0v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/util-common/" data-id="ck2kdakqx000ugsum377kcbhn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -626,78 +626,7 @@ exports.atomConfig = atomConfig;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/util/" data-id="ck2kd92jr000wtcumgpwi5vtb" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-markdown-preview-plus/lib/placeholder-view" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/31/markdown-preview-plus/lib/placeholder-view/" class="article-date">
-  <time datetime="2019-10-31T09:19:10.846Z" itemprop="datePublished">2019-10-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/31/markdown-preview-plus/lib/placeholder-view/">markdown-preview-plus/lib/placeholder-view</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const util_1 = require("./markdown-preview-view/util");
-const markdown_preview_view_1 = require("./markdown-preview-view");
-const util_2 = require("./util");
-class PlaceholderView {
-    constructor(editorId) {
-        this.editorId = editorId;
-        this.element = document.createElement('div');
-        this.initialize = () => {
-            const editor = util_1.editorForId(this.editorId);
-            if (!editor) {
-                return;
-            }
-            const pane = atom.workspace.paneForItem(this);
-            this._view = markdown_preview_view_1.MarkdownPreviewViewEditor.create(editor);
-            if (!pane)
-                return;
-            pane.addItem(this._view);
-            util_2.handlePromise(pane.destroyItem(this));
-        };
-        this.element.classList.add('markdown-spinner');
-        setImmediate(this.initialize);
-    }
-    getView() {
-        return this._view;
-    }
-    getTitle() {
-        return 'Placeholder Markdown Preview Plus View';
-    }
-    getURI() {
-        return 'markdown-preview-plus://placeholder';
-    }
-}
-exports.PlaceholderView = PlaceholderView;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGxhY2Vob2xkZXItdmlldy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9wbGFjZWhvbGRlci12aWV3LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsdURBQTBEO0FBQzFELG1FQUFtRTtBQUNuRSxpQ0FBc0M7QUFFdEMsTUFBYSxlQUFlO0lBRzFCLFlBQW9CLFFBQWdCO1FBQWhCLGFBQVEsR0FBUixRQUFRLENBQVE7UUFGN0IsWUFBTyxHQUFHLFFBQVEsQ0FBQyxhQUFhLENBQUMsS0FBSyxDQUFDLENBQUE7UUFtQnRDLGVBQVUsR0FBRyxHQUFHLEVBQUU7WUFDeEIsTUFBTSxNQUFNLEdBQUcsa0JBQVcsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLENBQUE7WUFDekMsSUFBSSxDQUFDLE1BQU0sRUFBRTtnQkFDWCxPQUFNO2FBQ1A7WUFDRCxNQUFNLElBQUksR0FBRyxJQUFJLENBQUMsU0FBUyxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsQ0FBQTtZQUM3QyxJQUFJLENBQUMsS0FBSyxHQUFHLGlEQUF5QixDQUFDLE1BQU0sQ0FBQyxNQUFNLENBQUMsQ0FBQTtZQUNyRCxJQUFJLENBQUMsSUFBSTtnQkFBRSxPQUFNO1lBQ2pCLElBQUksQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxDQUFBO1lBQ3hCLG9CQUFhLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFBO1FBQ3ZDLENBQUMsQ0FBQTtRQTFCQyxJQUFJLENBQUMsT0FBTyxDQUFDLFNBQVMsQ0FBQyxHQUFHLENBQUMsa0JBQWtCLENBQUMsQ0FBQTtRQUM5QyxZQUFZLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxDQUFBO0lBQy9CLENBQUM7SUFFTSxPQUFPO1FBQ1osT0FBTyxJQUFJLENBQUMsS0FBSyxDQUFBO0lBQ25CLENBQUM7SUFFTSxRQUFRO1FBQ2IsT0FBTyx3Q0FBd0MsQ0FBQTtJQUNqRCxDQUFDO0lBRU0sTUFBTTtRQUNYLE9BQU8scUNBQXFDLENBQUE7SUFDOUMsQ0FBQztDQWFGO0FBL0JELDBDQStCQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGVkaXRvckZvcklkIH0gZnJvbSAnLi9tYXJrZG93bi1wcmV2aWV3LXZpZXcvdXRpbCdcbmltcG9ydCB7IE1hcmtkb3duUHJldmlld1ZpZXdFZGl0b3IgfSBmcm9tICcuL21hcmtkb3duLXByZXZpZXctdmlldydcbmltcG9ydCB7IGhhbmRsZVByb21pc2UgfSBmcm9tICcuL3V0aWwnXG5cbmV4cG9ydCBjbGFzcyBQbGFjZWhvbGRlclZpZXcge1xuICBwdWJsaWMgZWxlbWVudCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpXG4gIHByaXZhdGUgX3ZpZXc/OiBNYXJrZG93blByZXZpZXdWaWV3RWRpdG9yXG4gIGNvbnN0cnVjdG9yKHByaXZhdGUgZWRpdG9ySWQ6IG51bWJlcikge1xuICAgIHRoaXMuZWxlbWVudC5jbGFzc0xpc3QuYWRkKCdtYXJrZG93bi1zcGlubmVyJylcbiAgICBzZXRJbW1lZGlhdGUodGhpcy5pbml0aWFsaXplKVxuICB9XG5cbiAgcHVibGljIGdldFZpZXcoKSB7XG4gICAgcmV0dXJuIHRoaXMuX3ZpZXdcbiAgfVxuXG4gIHB1YmxpYyBnZXRUaXRsZSgpIHtcbiAgICByZXR1cm4gJ1BsYWNlaG9sZGVyIE1hcmtkb3duIFByZXZpZXcgUGx1cyBWaWV3J1xuICB9XG5cbiAgcHVibGljIGdldFVSSSgpIHtcbiAgICByZXR1cm4gJ21hcmtkb3duLXByZXZpZXctcGx1czovL3BsYWNlaG9sZGVyJ1xuICB9XG5cbiAgcHJpdmF0ZSBpbml0aWFsaXplID0gKCkgPT4ge1xuICAgIGNvbnN0IGVkaXRvciA9IGVkaXRvckZvcklkKHRoaXMuZWRpdG9ySWQpXG4gICAgaWYgKCFlZGl0b3IpIHtcbiAgICAgIHJldHVyblxuICAgIH1cbiAgICBjb25zdCBwYW5lID0gYXRvbS53b3Jrc3BhY2UucGFuZUZvckl0ZW0odGhpcylcbiAgICB0aGlzLl92aWV3ID0gTWFya2Rvd25QcmV2aWV3Vmlld0VkaXRvci5jcmVhdGUoZWRpdG9yKVxuICAgIGlmICghcGFuZSkgcmV0dXJuXG4gICAgcGFuZS5hZGRJdGVtKHRoaXMuX3ZpZXcpXG4gICAgaGFuZGxlUHJvbWlzZShwYW5lLmRlc3Ryb3lJdGVtKHRoaXMpKVxuICB9XG59XG4iXX0=
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/placeholder-view/" data-id="ck2kd92jm000rtcuma191d6gf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/util/" data-id="ck2kdakr1000ygsumhx4ph6w1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -888,7 +817,78 @@ exports.testing = {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/pandoc-helper/" data-id="ck2kd92jn000stcum92c9fe47" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/pandoc-helper/" data-id="ck2kdakqq000ogsum4tbx2axv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-markdown-preview-plus/lib/placeholder-view" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/31/markdown-preview-plus/lib/placeholder-view/" class="article-date">
+  <time datetime="2019-10-31T09:19:10.846Z" itemprop="datePublished">2019-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/31/markdown-preview-plus/lib/placeholder-view/">markdown-preview-plus/lib/placeholder-view</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const util_1 = require("./markdown-preview-view/util");
+const markdown_preview_view_1 = require("./markdown-preview-view");
+const util_2 = require("./util");
+class PlaceholderView {
+    constructor(editorId) {
+        this.editorId = editorId;
+        this.element = document.createElement('div');
+        this.initialize = () => {
+            const editor = util_1.editorForId(this.editorId);
+            if (!editor) {
+                return;
+            }
+            const pane = atom.workspace.paneForItem(this);
+            this._view = markdown_preview_view_1.MarkdownPreviewViewEditor.create(editor);
+            if (!pane)
+                return;
+            pane.addItem(this._view);
+            util_2.handlePromise(pane.destroyItem(this));
+        };
+        this.element.classList.add('markdown-spinner');
+        setImmediate(this.initialize);
+    }
+    getView() {
+        return this._view;
+    }
+    getTitle() {
+        return 'Placeholder Markdown Preview Plus View';
+    }
+    getURI() {
+        return 'markdown-preview-plus://placeholder';
+    }
+}
+exports.PlaceholderView = PlaceholderView;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGxhY2Vob2xkZXItdmlldy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9wbGFjZWhvbGRlci12aWV3LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsdURBQTBEO0FBQzFELG1FQUFtRTtBQUNuRSxpQ0FBc0M7QUFFdEMsTUFBYSxlQUFlO0lBRzFCLFlBQW9CLFFBQWdCO1FBQWhCLGFBQVEsR0FBUixRQUFRLENBQVE7UUFGN0IsWUFBTyxHQUFHLFFBQVEsQ0FBQyxhQUFhLENBQUMsS0FBSyxDQUFDLENBQUE7UUFtQnRDLGVBQVUsR0FBRyxHQUFHLEVBQUU7WUFDeEIsTUFBTSxNQUFNLEdBQUcsa0JBQVcsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLENBQUE7WUFDekMsSUFBSSxDQUFDLE1BQU0sRUFBRTtnQkFDWCxPQUFNO2FBQ1A7WUFDRCxNQUFNLElBQUksR0FBRyxJQUFJLENBQUMsU0FBUyxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsQ0FBQTtZQUM3QyxJQUFJLENBQUMsS0FBSyxHQUFHLGlEQUF5QixDQUFDLE1BQU0sQ0FBQyxNQUFNLENBQUMsQ0FBQTtZQUNyRCxJQUFJLENBQUMsSUFBSTtnQkFBRSxPQUFNO1lBQ2pCLElBQUksQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxDQUFBO1lBQ3hCLG9CQUFhLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFBO1FBQ3ZDLENBQUMsQ0FBQTtRQTFCQyxJQUFJLENBQUMsT0FBTyxDQUFDLFNBQVMsQ0FBQyxHQUFHLENBQUMsa0JBQWtCLENBQUMsQ0FBQTtRQUM5QyxZQUFZLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxDQUFBO0lBQy9CLENBQUM7SUFFTSxPQUFPO1FBQ1osT0FBTyxJQUFJLENBQUMsS0FBSyxDQUFBO0lBQ25CLENBQUM7SUFFTSxRQUFRO1FBQ2IsT0FBTyx3Q0FBd0MsQ0FBQTtJQUNqRCxDQUFDO0lBRU0sTUFBTTtRQUNYLE9BQU8scUNBQXFDLENBQUE7SUFDOUMsQ0FBQztDQWFGO0FBL0JELDBDQStCQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGVkaXRvckZvcklkIH0gZnJvbSAnLi9tYXJrZG93bi1wcmV2aWV3LXZpZXcvdXRpbCdcbmltcG9ydCB7IE1hcmtkb3duUHJldmlld1ZpZXdFZGl0b3IgfSBmcm9tICcuL21hcmtkb3duLXByZXZpZXctdmlldydcbmltcG9ydCB7IGhhbmRsZVByb21pc2UgfSBmcm9tICcuL3V0aWwnXG5cbmV4cG9ydCBjbGFzcyBQbGFjZWhvbGRlclZpZXcge1xuICBwdWJsaWMgZWxlbWVudCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpXG4gIHByaXZhdGUgX3ZpZXc/OiBNYXJrZG93blByZXZpZXdWaWV3RWRpdG9yXG4gIGNvbnN0cnVjdG9yKHByaXZhdGUgZWRpdG9ySWQ6IG51bWJlcikge1xuICAgIHRoaXMuZWxlbWVudC5jbGFzc0xpc3QuYWRkKCdtYXJrZG93bi1zcGlubmVyJylcbiAgICBzZXRJbW1lZGlhdGUodGhpcy5pbml0aWFsaXplKVxuICB9XG5cbiAgcHVibGljIGdldFZpZXcoKSB7XG4gICAgcmV0dXJuIHRoaXMuX3ZpZXdcbiAgfVxuXG4gIHB1YmxpYyBnZXRUaXRsZSgpIHtcbiAgICByZXR1cm4gJ1BsYWNlaG9sZGVyIE1hcmtkb3duIFByZXZpZXcgUGx1cyBWaWV3J1xuICB9XG5cbiAgcHVibGljIGdldFVSSSgpIHtcbiAgICByZXR1cm4gJ21hcmtkb3duLXByZXZpZXctcGx1czovL3BsYWNlaG9sZGVyJ1xuICB9XG5cbiAgcHJpdmF0ZSBpbml0aWFsaXplID0gKCkgPT4ge1xuICAgIGNvbnN0IGVkaXRvciA9IGVkaXRvckZvcklkKHRoaXMuZWRpdG9ySWQpXG4gICAgaWYgKCFlZGl0b3IpIHtcbiAgICAgIHJldHVyblxuICAgIH1cbiAgICBjb25zdCBwYW5lID0gYXRvbS53b3Jrc3BhY2UucGFuZUZvckl0ZW0odGhpcylcbiAgICB0aGlzLl92aWV3ID0gTWFya2Rvd25QcmV2aWV3Vmlld0VkaXRvci5jcmVhdGUoZWRpdG9yKVxuICAgIGlmICghcGFuZSkgcmV0dXJuXG4gICAgcGFuZS5hZGRJdGVtKHRoaXMuX3ZpZXcpXG4gICAgaGFuZGxlUHJvbWlzZShwYW5lLmRlc3Ryb3lJdGVtKHRoaXMpKVxuICB9XG59XG4iXX0=
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/placeholder-view/" data-id="ck2kdakqt000rgsumfcyleku0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -952,7 +952,7 @@ exports.migrateConfig = migrateConfig;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/migrate-config/" data-id="ck2kd92jl000qtcum9cofawdj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/migrate-config/" data-id="ck2kdakqp000ngsumaakj2tv0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1214,7 +1214,7 @@ exports.destroy = destroy;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/markdown-preview-view/util/" data-id="ck2kd92kc001dtcum9on5e5r4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/lib/markdown-preview-view/util/" data-id="ck2kdakri001cgsum8njs37zy" class="article-share-link">Share</a>
       
       
     </footer>
