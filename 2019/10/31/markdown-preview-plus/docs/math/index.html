@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>markdown-preview-plus/docs/math | Acdemic-Prodigy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="LaTeX style mathMPP extends the syntax of GitHub flavored markdown with equation blocks.Inside an equation block you can use any LaTeX macros that are valid in a mathsenvironment of a LaTeX document.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown-preview-plus&#x2F;docs&#x2F;math">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;markdown-preview-plus&#x2F;docs&#x2F;math&#x2F;index.html">
+<meta property="og:site_name" content="Acdemic-Prodigy">
+<meta property="og:description" content="LaTeX style mathMPP extends the syntax of GitHub flavored markdown with equation blocks.Inside an equation block you can use any LaTeX macros that are valid in a mathsenvironment of a LaTeX document.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-31T09:19:10.830Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Acdemic-Prodigy" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Acdemic-Prodigy</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-markdown-preview-plus/docs/math" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/31/markdown-preview-plus/docs/math/" class="article-date">
+  <time datetime="2019-10-31T09:19:10.830Z" itemprop="datePublished">2019-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      markdown-preview-plus/docs/math
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="LaTeX-style-math"><a href="#LaTeX-style-math" class="headerlink" title="LaTeX style math"></a>LaTeX style math</h1><p>MPP extends the syntax of <a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank" rel="noopener">GitHub flavored markdown</a> with equation blocks.<br>Inside an equation block you can use any LaTeX macros that are valid in a maths<br>environment of a LaTeX document. MPP will then render the equation in the<br>preview window. For a full list of supported macros please see<br><a href="http://docs.mathjax.org/en/latest/tex.html#supported-latex-commands" target="_blank" rel="noopener">Supported LaTeX commands</a>.</p>
+<p>If focus is given to either the markdown source<br>editor or the preview window then math rendering can be toggled in the menu<br><strong>Packages &rsaquo; Markdown Preview Plus &rsaquo; Toggle LaTex Rendering</strong> or<br>using the keymap <code>ctrl-shift-x</code>.</p>
+<p>To enable LaTeX rendering by default search for <strong>Markdown Preview Plus</strong> in the<br><strong>Filter packages</strong> input dialogue of the <strong>File &rsaquo; Settings</strong> menu and<br>tick <strong>Enable Latex Rendering By Default</strong>.</p>
+<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><p>The syntax to specify an equation uses dollar signs <code>$</code>. If you want to<br>literally display a dollar sign you can use <code>\$</code>.</p>
+<ol>
+<li><p><strong>Displayed equations</strong> are delimited by <code>$$</code>. Here is an example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">... Here she comes to wreck the day. it&apos;s because i&apos;m green isn&apos;t it! hey,</span><br><span class="line">maybe i will give you a call sometime. your number still 911?</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">R_&#123;\mu \nu&#125; - &#123;1 \over 2&#125;g_&#123;\mu \nu&#125;\,R + g_&#123;\mu \nu&#125; \Lambda</span><br><span class="line">= &#123;8 \pi G \over c^4&#125; T_&#123;\mu \nu&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">kinda hot in these rhinos. look at that, it&apos;s exactly three seconds before i</span><br><span class="line">honk your nose and pull your underwear over your head ...</span><br></pre></td></tr></table></figure>
+
+<p>You can also use the delimiters <code>\[ ... \]</code> for display equations. Here is<br>an example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">... Here she comes to wreck the day. it&apos;s because i&apos;m green isn&apos;t it! hey,</span><br><span class="line">maybe i will give you a call sometime. your number still 911?</span><br><span class="line"></span><br><span class="line">\[</span><br><span class="line">R_&#123;\mu \nu&#125;- &#123;1 \over 2&#125;g_&#123;\mu \nu&#125;\,R + g_&#123;\mu \nu&#125; \Lambda</span><br><span class="line">= &#123;8 \pi G \over c^4&#125; T_&#123;\mu \nu&#125;</span><br><span class="line">\]</span><br><span class="line"></span><br><span class="line">kinda hot in these rhinos. look at that, it&apos;s exactly three seconds before i</span><br><span class="line">honk your nose and pull your underwear over your head ...</span><br></pre></td></tr></table></figure>
+
+<p>You do not have to separate a displayed equation block from other blocks<br>with blank lines. You can also include content on the same lines as the<br>delimiters with the restriction that the opening delimiter must be placed at<br>the beginning of its line and the closing delimiter must be placed at the<br>end of its line:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">... Here she comes to wreck the day. it&apos;s because i&apos;m green isn&apos;t it! hey,</span><br><span class="line">maybe i will give you a call sometime. your number still 911?</span><br><span class="line">$$ R_&#123;\mu \nu&#125; - &#123;1 \over 2&#125;g_&#123;\mu \nu&#125;\,R + g_&#123;\mu \nu&#125; \Lambda</span><br><span class="line">= &#123;8 \pi G \over c^4&#125; T_&#123;\mu \nu&#125; $$</span><br><span class="line">kinda hot in these rhinos. look at that, it&apos;s exactly three seconds before i</span><br><span class="line">honk your nose and pull your underwear over your head ...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Inline equations</strong> are delimited by <code>$</code>. Here is an example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">... Here she comes to wreck the day. $\int -xe^&#123;x^2&#125; dx$ it&apos;s because i&apos;m</span><br><span class="line">green isn&apos;t it! hey, maybe i will give you a call sometime. your number</span><br><span class="line">still 911? kinda hot in $\int -xe^&#123;x^2&#125; dx$ these rhinos. look at that,</span><br><span class="line">it&apos;s exactly three seconds before i honk your $\int -xe^&#123;x^2&#125; dx$ nose and</span><br><span class="line">pull your underwear over your head ...</span><br></pre></td></tr></table></figure>
+
+<p>You can also use the delimiters <code>\( ... \)</code> for inline equations. Here is<br>an example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">... Here she comes to wreck the day. \(\int -xe^&#123;x^2&#125; dx\) it&apos;s because i&apos;m</span><br><span class="line">green isn&apos;t it! hey, maybe i will give you a call sometime. your number</span><br><span class="line">still 911? kinda hot in \(\int -xe^&#123;x^2&#125; dx\) these rhinos. look at that,</span><br><span class="line">it&apos;s exactly three seconds before i honk your \(\int -xe^&#123;x^2&#125; dx\) nose and</span><br><span class="line">pull your underwear over your head ...</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><p>MPP supports persistent <a href="http://docs.mathjax.org/en/latest/tex.html#defining-tex-macros" target="_blank" rel="noopener">macro definitions</a>.<br>Macros belong in <code>~/.atom/markdown-preview-plus.cson</code> and are defined as follows.</p>
+<h3 id="Macro-Definition-Syntax"><a href="#Macro-Definition-Syntax" class="headerlink" title="Macro Definition Syntax"></a>Macro Definition Syntax</h3><h4 id="Zero-argument-macros"><a href="#Zero-argument-macros" class="headerlink" title="Zero argument macros"></a>Zero argument macros</h4><p>To define a macro that takes no arguments (like <code>\sin</code>) just wrap it in quotes like so</p>
+<figure class="highlight cson"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is just an alias for \theta.</span></span><br><span class="line">th: <span class="string">"\\theta"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-9-argument-macros"><a href="#1-9-argument-macros" class="headerlink" title="1-9 argument macros"></a>1-9 argument macros</h4><p>To define a macro that takes arguments (like <code>\frac</code>), use an array that specifies<br>the number of arguments allowed. Then refer to the arguments as <code>#1</code> <code>#2</code> like so:</p>
+<figure class="highlight cson"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This one gives you "1 over something" as a fraction.</span></span><br><span class="line">inv: [<span class="string">"\\frac&#123;1&#125;&#123;#1&#125;"</span>,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># This one gives you a fraction with nicely typeset parentheses on either side.</span></span><br><span class="line">pfrac: [<span class="string">"\\left(\\frac&#123;#1&#125;&#123;#2&#125;\\right)"</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<h4 id="Macro-Names"><a href="#Macro-Names" class="headerlink" title="Macro Names"></a>Macro Names</h4><p>Macros need to be named with either</p>
+<ul>
+<li>a single non-alphanumeric character like <code>\,</code> or</li>
+<li>any number of uppercase and lowercase letters (no numbers).</li>
+</ul>
+<p>Please see <a href="http://tex.stackexchange.com/questions/66666/command-macro-name-cannot-include-numbers-and-symbols" target="_blank" rel="noopener">this</a><br>StackExchange discussion.</p>
+<p>Note that since we define the objects in CSON, if you want to use a single non-alphanumeric<br>character for the name of your macro like</p>
+<figure class="highlight cson"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!: <span class="string">"&#123;OK&#125;"</span></span><br></pre></td></tr></table></figure>
+
+<p>MPP will fail because CSON will throw an <code>unexpected !</code> syntax error. So be sure to write such definitions as a string. The following will work fine:</p>
+<pre><code class="cson"><span class="string">'!'</span>: <span class="string">"{OK}"</span></code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/31/markdown-preview-plus/docs/math/" data-id="ck2kdakqy000vgsumgy5c3jz5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/31/markdown-preview-plus/docs/installation/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          markdown-preview-plus/docs/installation
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/31/markdown-preview-plus/coffeelint/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">markdown-preview-plus/coffeelint</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">安装教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" rel="tag">安装教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" style="font-size: 10px;">安装教程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/01/HomePage-test/">HomePage_test</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src/tsconfig/">markdown-preview-plus/src/tsconfig</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src/tslint/">markdown-preview-plus/src/tslint</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src-client/template/">markdown-preview-plus/src-client/template</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/31/markdown-preview-plus/src-client/tsconfig/">markdown-preview-plus/src-client/tsconfig</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 ElainaChan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
