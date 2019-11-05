@@ -6,6 +6,13 @@ tags:
 -
 categories: 安装教程
 ---
+markdowm+hero+github搭建博客
+换电脑进行博客更新
+Atom安装+配置 Markdown
+Maven安装配置
+Idea破解
+
+<!-- more -->
 # markdowm+hero+github搭建博客
 1. github账号注册和管理
     - 注册 github 账号
@@ -35,12 +42,13 @@ categories: 安装教程
     - 输入命令进行安装：
         - npm install -g hexo-cli
         - hexo  &nbsp;&nbsp;&nbsp;  #是否安装成功
+    -  安装依赖 hexo-deployer-git 用于后续的 deploy，输入安装命令：
+        - npm install
+        - npm install hexo-deployer-git --save
     - 进入文件夹查看新建候得目录结构
 6. 搭建网站
     - 初始化生成静态网页文件，Hexo目录下右击选择"Git Bash Here"，输入命令：
         - hexo init
-    - 安装 hexo-deployer-git 用于后续的 deploy，输入命令：
-        - npm install hexo-deployer-git --save
     - 当前文件夹下找到"_config.yml"文件，进行个性化配置，设置标题及作者如下所示：
         - title: BlogTest
         - author: ElainaChan
@@ -56,6 +64,23 @@ categories: 安装教程
         - hexo d   &nbsp;&nbsp;&nbsp;                 #更新部署到github上
         - hexo s   &nbsp;&nbsp; &nbsp;            #本地 server 部署
     - 浏览器输入地址：  localhost:4000   ，访问博客内容
+
+# 换电脑进行博客更新
+参考链接：https://www.jianshu.com/p/6a29f5243ab4 或者 https://www.jianshu.com/p/0b1fccce74e0
+1. 安装好git、npm、node.js等环境，设置全局用户
+     1. 使用 第一章节  "markdowm+hero+github搭建博客" 的git的安装方法
+     2. 进行绑定和生成 ssh key
+2. 安装 hexo（上一节内容）及依赖库
+3. 新电脑上克隆 hexo 分支到本地，输入命令:
+     - git clone https://github.com/ElainaChan/ElainaChan.github.io.git
+4. 切换到该目录下，执行命令 npm install （hexo分支可能缺少文件夹）
+5. 新电脑开始撰写博客内容，命令如下：
+     1. hexo new "**"
+     2. git add .
+     3. git commit -m "***"
+     4. git push
+     5. hexo d -g   &nbsp;&nbsp; &nbsp;            #更新博客并查看
+6. 每次博客更新，最好先 git pull
 
 # Atom安装+配置 Markdown
 1. 下载安装：https://atom.io/ ，解压压缩包

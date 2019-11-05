@@ -5,7 +5,7 @@
 # Site
 title: Acdemic-Prodigy
 subtitle:
-description:
+description: Smile~~
 keywords:
 author: ElainaChan
 language: en
@@ -90,7 +90,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: melody
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
