@@ -6,13 +6,7 @@ tags:
 -
 categories: 安装教程
 ---
-markdowm+hero+github搭建博客
-换电脑进行博客更新
-Atom安装+配置 Markdown
-Maven安装配置
-Idea破解
 
-<!-- more -->
 # markdowm+hero+github搭建博客
 1. github账号注册和管理
     - 注册 github 账号
